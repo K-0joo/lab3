@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	FILE *src; /* source file */
 	FILE *dst; /*destination file */
@@ -12,7 +12,8 @@ main(int argc, char *argv[])
 	int count = 0;
 
 	if(argc < 3) {
-		printf("Usage: file_copy source_file destination_file\ n");
+		printf("Usage: file_copy source_file destination_file\n");
+		exit(1);
 	}
 
 	if((src = fopen(argv[1], "r")) == NULL) {
